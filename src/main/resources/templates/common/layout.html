@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle}"></title>
+    <link href="/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/bootstrap-icons.css" rel="stylesheet">
+    <link href="/css/common/layout.css" rel="stylesheet">
+</head>
+<body>
+<nav class="sidebar">
+    <div class="sidebar-logo">
+        <img src="/images/logo.png" alt="叩丁狼Logo">
+    </div>
+    <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="/chat" th:classappend="${currentPath == '/chat'} ? 'active'">
+                    <i class="bi bi-chat-dots"></i> 智能客服
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/document" th:classappend="${currentPath == '/document'} ? 'active'">
+                    <i class="bi bi-book"></i> 知识库
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<header class="header">
+    <h1 th:text="${pageTitle}"></h1>
+    <a href="#" class="logout-btn" onclick="logout()">
+        <i class="bi bi-box-arrow-right"></i> 退出登录
+    </a>
+</header>
+
+<main class="main-content">
+    <div th:replace="${content}"></div>
+
+</main>
+
+    <script src="/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/js/common/layout.js"></script>
+</body>
+</html>

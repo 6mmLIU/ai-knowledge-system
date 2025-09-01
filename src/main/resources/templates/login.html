@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/login.css">
+
+</head>
+<body>
+<div class="login-container">
+    <div class="login-header">
+        <img src="/images/logo.png" alt="叩丁狼Logo" class="login-logo">
+        <h2 th:text="${title}"></h2>
+        <p>欢迎回来，请登录您的账号</p>
+    </div>
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="phone" placeholder="请输入手机号" required value="13700000000">
+            <label for="phone">手机号</label>
+        </div>
+<!--        <div class="form-floating">-->
+<!--            <input type="text" class="form-control" id="username" placeholder="用户名" required value="admin">-->
+<!--            <label for="username">用户名</label>-->
+<!--        </div>-->
+        <div class="form-floating">
+            <input type="password" class="form-control" id="password" placeholder="密码" required value="123456">
+            <label for="password">密码</label>
+
+        </div>
+        <div class="error-message" id="errorMessage"></div>
+        <button type="submit" class="btn btn-login">
+            <i class="bi bi-box-arrow-in-right"></i> 登录
+        </button>
+    </form>
+
+</div>
+
+<script src="/js/login.js"></script>
+
+</body>
+</html>

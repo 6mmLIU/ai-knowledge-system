@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/bootstrap-icons.css" rel="stylesheet">
+    <link href="/css/document/document.css" rel="stylesheet">
+</head>
+<body>
+<div th:fragment="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="upload-section" id="uploadSection">
+                    <h5>知识库文档</h5>
+                    <p class="text-muted">支持拖拽上传或点击选择文件</p>
+                    <input type="file" id="fileInput" style="display: none" onchange="handleFileSelect(this)"  multiple>
+                    <button class="btn btn-primary" id="selectFileBtn">
+                        <i class="bi bi-plus-circle"></i> 选择文件
+                    </button>
+                </div>
+                <div class="file-list mt-4" id="fileList">
+                    <!-- 文件列表将在这里显示 -->
+                </div>
+                <div class="mt-3 d-flex justify-content-between">
+                    <button id="clearAllBtn" class="btn btn-outline-danger"  style="display: none;">
+                        <i class="bi bi-trash"></i> 清除所有文件
+                    </button>
+                    <button id="uploadAllBtn" class="btn btn-primary" >
+                        <i class="bi bi-cloud-upload"></i> 开始上传
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">上传说明</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li>• 支持的文件类型：PDF、Word、TXT</li>
+                            <li>• 单个文件大小限制：10MB</li>
+                            <li>• 文件将被用于训练AI模型</li>
+                            <li>• 请确保文件内容清晰可读</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/js/document/document.js"></script>
+</div>
+</body>
+</html>

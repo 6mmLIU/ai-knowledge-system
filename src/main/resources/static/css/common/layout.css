@@ -1,0 +1,117 @@
+body {
+    background-color: #f5f5f5;
+    padding-top: 60px; /* 为固定头部添加顶部内边距 */
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 48px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    background-color: #343a40;
+    width: 240px; /* 固定侧边栏宽度 */
+}
+.sidebar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    padding: 8px;
+    background-color: #2b3035;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar-logo img {
+    height: 32px;
+    width: auto;
+}
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    margin: 0.2rem 0;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+}
+.sidebar .nav-link:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.sidebar .nav-link.active {
+    color: #fff;
+    background-color: #4a90e2;
+}
+.sidebar .nav-link i {
+    margin-right: 0.5rem;
+}
+.main-content {
+    margin-left: 240px; /* 与侧边栏宽度相同 */
+    padding: 20px;
+    min-height: calc(100vh - 60px); /* 减去头部高度 */
+}
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 240px; /* 与侧边栏宽度相同 */
+    z-index: 99;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px; /* 固定头部高度 */
+}
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+.logout-btn {
+    color: #dc3545;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.logout-btn:hover {
+    color: #c82333;
+}
+.logout-btn i {
+    margin-right: 0.5rem;
+}
+@media (max-width: 767.98px) {
+    body {
+        padding-top: 0; /* 移动端不需要顶部内边距 */
+    }
+    .sidebar {
+        position: static;
+        height: auto;
+        padding-top: 0;
+        width: 100%;
+    }
+    .sidebar-logo {
+        position: relative;
+        height: 40px;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+    .header {
+        left: 0;
+        position: static; /* 移动端头部不固定 */
+    }
+}

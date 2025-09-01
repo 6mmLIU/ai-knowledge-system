@@ -1,0 +1,47 @@
+spring:
+    application:
+        name: TIFW
+    ai:
+        ollama:
+            base-url: http://47.239.92.130:11434
+            chat:
+                model: deepseek-r1:1.5b
+                options:
+                    temperature: 0.8
+                    top-p: 0.9
+                    top-k: 1
+        memory:
+            redis:
+                host: localhost
+                port: 6379
+                password: 123456
+                timeout: 5000
+        vectorstore:
+            milvus:
+                client:
+                    host: 47.239.92.130 # default: localhost
+                    port: 19530 # default: 19530
+                    username: root # default: root
+                    password: Milvus # default: milvus
+                databaseName: default # default: default
+                collectionName: vector_store # default: vector_store
+                embeddingDimension: 1536 # default: 1536
+                indexType: IVF_FLAT # default: IVF_FLAT
+                metricType: COSINE # default: COSINE
+    datasource:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        password: 123456
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3307/tifw?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+    servlet:
+        multipart:
+            max-file-size: 10MB
+            max-request-size: 10MB
+    thymeleaf:
+        cache: false
+    codec:
+        max-in-memory-size: 50MB
+server:
+    port: 8083
+ 

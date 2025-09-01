@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="/css/chat/chat.css" rel="stylesheet">
+</head>
+<body>
+<div th:fragment="content">
+    <div class="chat-messages" id="chatContainer">
+        <div class="message system-message">
+            <div class="message-content">
+                <i class="bi bi-robot"></i> 这里是叩丁狼，有什么可以帮助您吗？
+            </div>
+        </div>
+
+    </div>
+    <div class="chat-input">
+        <div class="input-group">
+            <input type="text" id="userInput" name="userInput" class="form-control" placeholder="请输入您的问题...">
+            <button class="btn btn-primary" id="sendButton" >
+                <i class="bi bi-send"></i> 发送
+            </button>
+        </div>
+
+    </div>
+    <script src="/js/chat/chat.js"></script>
+</div>
+</body>
+</html>
