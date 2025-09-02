@@ -3,7 +3,7 @@ spring:
         name: TIFW
     ai:
         ollama:
-            base-url: http://47.239.92.130:11434
+            base-url: http://example.com:11434 # 示例地址
             chat:
                 model: deepseek-r1:1.5b
                 options:
@@ -14,15 +14,15 @@ spring:
             redis:
                 host: localhost
                 port: 6379
-                password: 123456
+                password: example-redis-password # 示例 Redis 密码
                 timeout: 5000
         vectorstore:
             milvus:
                 client:
-                    host: 47.239.92.130 # default: localhost
+                    host: example-host # default: localhost
                     port: 19530 # default: 19530
                     username: root # default: root
-                    password: Milvus # default: milvus
+                    password: example-milvus-password # 示例 Milvus 密码
                 databaseName: default # default: default
                 collectionName: vector_store # default: vector_store
                 embeddingDimension: 1536 # default: 1536
@@ -30,7 +30,7 @@ spring:
                 metricType: COSINE # default: COSINE
     datasource:
         driverClassName: com.mysql.cj.jdbc.Driver
-        password: 123456
+        password: example-db-password # 示例数据库密码
         type: com.alibaba.druid.pool.DruidDataSource
         url: jdbc:mysql://localhost:3307/tifw?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
         username: root
